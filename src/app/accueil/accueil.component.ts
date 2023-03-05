@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SEOService } from '../services/seo.service';
 
 @Component({
   selector: 'app-accueil',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AccueilComponent  {
 
-  constructor() { }
+  constructor(private readonly seo : SEOService){}
+
+  ngOnInit(): void {
+    this.seo.updateMetaIndexPage(true);
+  }
 
 }
