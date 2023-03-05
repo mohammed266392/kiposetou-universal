@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Console } from 'console';
 import { HeaderService } from '../services/header.service';
 
 
@@ -9,68 +10,32 @@ import { HeaderService } from '../services/header.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  modaleMobileMenu : boolean = false;
-  showContainer: boolean = false;
-  buttonRealisation: boolean = false;
-  menuMobile: boolean = false;
-  wasInside = false;
-  monBooleanComponent = false;
-  menuBurgerComponent = false;
-
-  @HostListener('click')
-  clickInside() {
-    console.log("clicked inside");
-    this.wasInside = true;
-  }
-
-  @HostListener('document:click')
-  clickout() {
-    if (!this.wasInside) {
-      console.log("clicked outside");
-    }
-    this.wasInside = false;
-    this.headerService.buttonRealisation.subscribe(value =>{
-      this.buttonRealisation = value;
-    });
-    this.headerService.clickReset();
-  }
-
+  nosRealisationEstActive : boolean = false;
+  menuBurgerEstEnCroix : boolean = false;
+  
   constructor(private router : Router, private headerService: HeaderService) {
-    this.monBooleanComponent = this.headerService.getMonBoolean();
-    this.menuBurgerComponent = this.headerService.getMenuBurger();
-   }
+  }
+
+  @HostListener('window:click', ['$event'])
+  onClick(event: MouseEvent) {
+    if(!this.headerService.elementEstDansHeaderMenu(event)){
+      this.nosRealisationEstActive=false;
+      console.log("nos realisation à false");
+    }
+    console.log("v0 : ",this.nosRealisationEstActive);
+  }
 
   ngOnInit(): void {
   }
 
   nosRealisation(){
-    // this.monBooleanComponent = ;
-    this.headerService.setMonBoolean(!this.monBooleanComponent);
-    this.monBooleanComponent = this.headerService.getMonBoolean();
-    // console.log("monBooleanComponent : ",this.monBooleanComponent)
-    // this.headerService.buttonRealisation.subscribe(value =>{
-    //   this.buttonRealisation = value;
-    // });
-    this.headerService.clickNosRealisation();
-    console.log("valeur of buttonRealisation",this.buttonRealisation);
-
-    
+    this.nosRealisationEstActive=!this.nosRealisationEstActive;
   }
 
   afficheMenu(){
-    // this.headerService.buttonMenuMobile.subscribe(value =>{
-    //   console.log("ma data : ",value);
-    //   this.menuMobile = value;
-    // });
-    // this.headerService.clickMenuMobile();
-    this.headerService.setMenuBurger(!this.menuBurgerComponent);
-    this.menuBurgerComponent = this.headerService.getMenuBurger();
-    // console.log("valeur of MenuBurger",this.headerService.getMenuBurger());
+    this.menuBurgerEstEnCroix=!this.menuBurgerEstEnCroix;
   }
 
-  afficheMenuMobile(){
-    console.log("j'affiche le menu en mobile");
-  }
   goToTheAcceuil(){
     this.router.navigate(['Accueil']);
   }

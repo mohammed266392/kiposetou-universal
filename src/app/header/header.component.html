@@ -11,29 +11,27 @@
             KIPOSETOU MENUISERIE
         </div>
     </div>
-    la valeur du menuBurgerComponent est {{menuBurgerComponent}}
-    <div appClickStopPropagation  [ngClass]="{'header_menu-burger':true,'active':menuBurgerComponent==true}" (click)="afficheMenu()">
+    <div appClickStopPropagation  [ngClass]="{'header_menu-burger':true,'active':menuBurgerEstEnCroix}" (click)="afficheMenu()">
         <span class="header_menu-burger_bar-millieu"></span>
     </div>
     <div class="header_menu_wrapper">
-        <!-- la valeur du boutonTest est {{monBooleanComponent}} -->
-        <div appClickStopPropagation [ngClass]="{'header_menu':true,'active':menuBurgerComponent==true,'click-nos-realisations':buttonRealisation==true}">
-            <div  class="header_menu_items"><a [routerLink]="['/Accueil']" class="header_menu_items_link">Accueil</a> </div>
-            <div class="header_menu_items"><a [routerLink]="['/A-propos']" class="header_menu_items_link">A propos</a> </div>
-            <div class="header_menu_items"><a [routerLink]="['/Nos-produits']" class="header_menu_items_link">Nos produits</a></div>
-            <div  appClickStopPropagation class="header_menu_items header_menu_items_realisation" (click)="nosRealisation()"><a class="header_menu_items_link header_menu_items_link_realisation">Nos réalisations</a>
-                    <div [ngClass]="{'header_menu_items_realisation_content':true}">
-                        <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Tout</a>
-                        <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Volets</a>
-                        <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Fenêtres</a>
-                        <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Portes</a>
-                        <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Portails</a>
-                        <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Pergolas</a>
-                        <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Couvertines</a>
-                        <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Appuis de Fenêtres Alu</a>
-                        <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Clôtures Alu/PVC</a>
-                    </div>
+        <div appClickStopPropagation [ngClass]="{'header_menu':true,'active':menuBurgerEstEnCroix,'click-nos-realisations':nosRealisationEstActive}">
+        <div  class="header_menu_items"><a [routerLink]="['/Accueil']" class="header_menu_items_link">Accueil</a> </div>
+        <div class="header_menu_items"><a [routerLink]="['/A-propos']" class="header_menu_items_link">A propos</a> </div>
+        <div class="header_menu_items"><a [routerLink]="['/Nos-produits']" class="header_menu_items_link">Nos produits</a></div>
+        <div  appClickStopPropagation class="header_menu_items header_menu_items_realisation" (click)="nosRealisation()"><a class="header_menu_items_link header_menu_items_link_realisation">Nos réalisations</a>
+            <div [ngClass]="{'header_menu_items_realisation_content':true}">
+                <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Tout</a>
+                <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Volets</a>
+                <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Fenêtres</a>
+                <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Portes</a>
+                <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Portails</a>
+                <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Pergolas</a>
+                <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Couvertines</a>
+                <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Appuis de Fenêtres Alu</a>
+                <a [routerLink]="['/Nos-realisations']" appClickStopPropagation class="header_menu_items_realisation_content-onglet">Clôtures Alu/PVC</a>
             </div>
+        </div>
             <!-- <div class="header_menu_items"><a [routerLink]="['/Espace-pros']" class="header_menu_items_link">Espace pro</a> </div>
             <div class="header_menu_items"><a [routerLink]="['/Blog']" class="header_menu_items_link">Blog</a> </div> -->
             <div class="header_menu_items"><a [routerLink]="['/Contact']" class="header_menu_items_link">Contact</a> </div>
