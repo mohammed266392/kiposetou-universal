@@ -5,13 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CeQueVousProposeeComponent } from './ce-que-vous-proposee/ce-que-vous-proposee.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { Proposer1Component } from './proposer1/proposer1.component';
+import { Proposer1ItemComponent } from './proposer1-item/proposer1-item.component';
 
 @NgModule({
   declarations: [
+    Proposer1ItemComponent,
+    Proposer1Component,
     AccueilComponent,
     CeQueVousProposeeComponent,
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    Proposer1Component,
+    Proposer1ItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

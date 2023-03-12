@@ -1,0 +1,52 @@
+.main2_container_icon_fenetre,.main2_container_icon_outils,.main2_container_icon_localisation{
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid black;
+    align-self: flex-start;
+    gap: 7px;
+    text-align: center;
+    width: 33%;
+  }
+
+  
+.sous_icon_texte{
+    text-align: center;
+    color: black;
+    font-style: normal;
+    font-weight: 300; 
+    overflow: hidden;
+    height: 0px;
+    transition: height 0.5s ease-out;
+    pointer-events: none;
+    //border: 1px solid rgb(177, 2, 2);
+    width: 86%;
+    align-self: center;
+    margin-top: 23px;
+  }
+
+.sous_icon_texte.active{
+  height: 210px;
+}
+
+.sous_icon_plus{
+  cursor: pointer;
+  margin: auto;
+  margin-top: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.sous_icon_plus.active{
+  background-color: #b3b3b3;
+  border-radius: 20px;
+}
+
+
+.sous_icon{
+  margin: auto;
+  height: 30px;
+}
+
+.icon{
+  margin: auto;
+  width:60px;
+  height:60px;
+}
