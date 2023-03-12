@@ -1,1 +1,16 @@
-<p>proposer1 works!</p>
+<div class="main2">
+    <div class="main2_container_proposer">
+        Ce que nous vous proposons
+    </div>
+    <div class="main2_container_icon">
+        <app-proposer1-item *ngFor="let id of idChildren" 
+        (clickEmitter)="clickReceive($event,id)" 
+        class="main2_container_icon_fenetre" 
+        [id]="id"
+        [imageUrl]="imagePath + iconsImages[id-1]"
+        [isActive]="isActiveTab[id-1]">
+        </app-proposer1-item>
+        <!-- <app-proposer1-item class="main2_container_icon_outils" [imageUrl]="imagePath + iconsImages[1]"></app-proposer1-item>
+        <app-proposer1-item class="main2_container_icon_localisation" [imageUrl]="imagePath + iconsImages[2]"></app-proposer1-item> -->
+    </div>
+</div>

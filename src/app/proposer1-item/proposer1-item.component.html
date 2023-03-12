@@ -1,8 +1,7 @@
-<div class="main2_container_icon_fenetre">
-    <img class="icon" src="./../../assets/images/la-fenetre.png" alt=""/>
-    <p class="sous_icon">Des produits adaptés à tous vos projets</p>
-    <img class="sous_icon_plus"  src="./../../assets/images/plus.png" alt="" width="35px" (click)="clickButton($event)"/> <!-- (click)="clickButton($event)"/> -->
-    <p class="sous_icon_texte">Selon votre budget, vos besoins et vos attentes : une maison individuelle,
-        une maison d'architecte, du logement collectif, des bâtiments tertiaires et
-        industriels. Tous vos projets seront réalisés !</p>
-</div>
+<img class="icon" [src]="imageUrl" alt=""/>
+<p class="sous_icon">Des produits adaptés à tous vos projets</p>
+<img  [ngClass]="{'sous_icon_plus':true, 'active':isActive}"  src="./../../assets/images/plus.png" alt="" width="35px" (click)="clickButton()"/> <!-- (click)="clickButton($event)"/> -->
+<p [ngClass]="{'sous_icon_texte':true,'active':isActive}">Selon votre budget, vos besoins et vos attentes : une maison individuelle,
+    une maison d'architecte, du logement collectif, des bâtiments tertiaires et
+    industriels. Tous vos projets seront réalisés !</p>
+
