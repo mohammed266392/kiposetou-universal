@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { SEOService } from '../services/seo.service';
 
 @Component({
@@ -8,10 +9,20 @@ import { SEOService } from '../services/seo.service';
 })
 export class AccueilComponent  {
 
-  constructor(private readonly seo : SEOService){}
+  modaleEstOuverte : boolean = false;
+
+  constructor(private readonly seo : SEOService, private router : Router){}
 
   ngOnInit(): void {
     this.seo.updateMetaIndexPage(true);
+  }
+
+  receiveClickDemanderUnAvis(value : boolean){
+    console.log("je change la valeur de modaleEstOuverte en ",value);
+    
+    this.modaleEstOuverte = value;
+    this.router.navigateByUrl("/Contact");
+
   }
 
 }

@@ -1,5 +1,17 @@
 @import "./../../vars.scss";
 
+.modaleEstOuverte{
+    display: none; /* caché par défaut */
+    position: fixed; /* position fixe */
+    z-index: 1; /* au-dessus de tous les autres éléments */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* permet de faire défiler la page si nécessaire */
+    background-color: rgba(0,0,0,0.4); /* foncé pour l'arrière-plan */
+}
+
 .main{
     background-image: url("./../../assets/images/fond_ecran_acceuil.jpg");
     display: flex;
@@ -59,45 +71,4 @@
       }
 
 }
-
-// .main_title_texte.active{
-//     width: 213px;
-//     background-color: #ffffff94;
-//     padding: 10px;
-// }
-
-// .main_title_texte{
-//     position: relative;
-//     align-self: center;
-//     color: transparent;
-//     font-size: 2.5em;
-//     color: #214a82;
-//     white-space: nowrap;
-//     -webkit-text-stroke: 0.1vw black;
-
-  
-//   }
-//   .main_title_texte::before{
-//     content: attr(data-text);
-//     position: absolute;
-//     align-self: center;
-//     top: 0;
-//     left: 0;
-//     width: 0;
-//     height: 100%;
-//     color: #ffffff;
-//     -webkit-text-stroke: 0vw black;
-//     border-right: 2px solid #ffffff ;
-//     overflow: hidden;
-//     animation: animate 6s linear ; 
-//   }
-//   @keyframes animate {
-//     0%,10%,100%{
-//       width: 0;
-//     }
-//     70%,90%{
-//       width: 100%;
-//     }
-//   }
-  
 
