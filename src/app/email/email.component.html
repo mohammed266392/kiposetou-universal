@@ -25,4 +25,15 @@
         </div>
         <div class="main_formulaire_block"></div>
     </div>
+
+    <div class="formulaire">
+        <form [formGroup]="monFormulaire" (ngSubmit)="onSubmit()">
+            <input type="text" formControlName="nom">
+            <input type="text" formControlName="email">
+            <input type="text" formControlName="objet">
+            <input type="text" formControlName="message">
+            <button type="submit" [disabled]="!monFormulaire?.valid">Envoyer</button>
+          </form>
+          mon formulaire est valide : {{!monFormulaire?.valid}}
+    </div>
 </div>
