@@ -26,14 +26,63 @@
         <div class="main_formulaire_block"></div>
     </div>
 
-    <div class="formulaire">
-        <form [formGroup]="monFormulaire" (ngSubmit)="onSubmit()">
-            <input type="text" formControlName="nom">
-            <input type="text" formControlName="email">
-            <input type="text" formControlName="objet">
-            <input type="text" formControlName="message">
-            <button type="submit" [disabled]="!monFormulaire?.valid">Envoyer</button>
-          </form>
-          mon formulaire est valide : {{!monFormulaire?.valid}}
-    </div>
+    <form [formGroup]="contactFormGroup" (ngSubmit)="onSubmit()">
+        <div formGroupName="contact" class="form-area">
+            <div>
+                <div class="col-md-2">
+                    <label>Nom</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" formControlName="nom">
+                </div>
+            </div>
+            <div>
+                <div class="col-md-2">
+                    <label>Prenom</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" formControlName="prenom">
+                </div>
+            </div>
+            <div>
+                <div class="col-md-2">
+                    <label>Email</label>
+                </div>
+                <div class="col-md-9">
+                    <div class="input-space">
+                        <input type="text" formControlName="email">
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger mt-1">
+                            <div *ngIf="email.errors['required']">
+                                the email is required
+                            </div>
+                            <div *ngIf="email!=null && email.errors['pattern']">
+                                the email is not correct
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="col-md-2">
+                    <label>Objet du message de contact</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" formControlName="objet">
+                </div>
+            </div>
+            <div>
+                <div class="col-md-2">
+                    <label>Message</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" formControlName="message">
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-info">Purchase</button>
+        </div>
+        </form>
+      
 </div>

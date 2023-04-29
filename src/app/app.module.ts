@@ -10,6 +10,8 @@ import { Proposer1ItemComponent } from './proposer1-item/proposer1-item.componen
 import { EmailComponent } from './email/email.component';
 import { RealisationComponent } from './realisation/realisation.component';
 import { PkChoisirComponent } from './pk-choisir/pk-choisir.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { PkChoisirComponent } from './pk-choisir/pk-choisir.component';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   schemas: [NO_ERRORS_SCHEMA], 
   providers: [],
